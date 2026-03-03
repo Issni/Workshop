@@ -1,0 +1,29 @@
+img {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+body {
+  background-color: rgb(16, 16, 16); 
+}
+
+.title{
+    background-color: blue;
+    display: flex;
+    padding: 10px 10px;
+}
+
+.progress{
+    height: 24px;
+    width: 20%;
+    color: gray;
+}
+
