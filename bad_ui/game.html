@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="game.css">
     <script src="main.js"></script>
 </head>
@@ -11,12 +14,101 @@
             TERMS OF SERVICE COMMAND
         </h2>
 
+        <audio autoplay>
+            <source src="test-audio.mp3" type="audio/mpeg"> 
+        </audio>
+
         <div class="frame">
-            <img src="Frame-1.png" height="250px" width="250px"/>
+            <img src="Frame-1.png" height="400px" width="400px"/>
+            <div class="hit-notes"></div>
         </div>
 
-        <div class="progress"></div>
+        <div class="progress-outline">
+        <div>
+            <p class="number">
+                67% 
+            </p>
+            <p class="text"> 
+                i have read and accept the terms of service
+            </p>
+        </div>
+        
+         <div class="progress">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+         </div>
+        </div>
     </div>
+    <script>
+        var i = 0
+        let blocks = document.querySelectorAll(".block");
+        let number = document.querySelector(".number"); //this part calls at the number i typed?? 
+        const interval = setInterval( () => {
+            if (i == blocks.length) {
+                i =  0;
+                blocks.forEach( (block) => {
+                    block.style.background = "transparent";
+                });
+            } else {
+                blocks[i].style.background = "rgb(255,255,255)";
+            //this chunk here i googled online to find i understand the math kinda? but still dono quite whats going on ISSUE - wont go to 100 cuz of the math
+                let percent = Math.floor((i / blocks.length) * 100);
+                number.textContent = percent + "%";
+                i = i + 1;
+            }
+        }, 250);
+
+
+
+
+
+        const hitNotes = document.querySelector('.hit-notes');
+
+// Define the times (in milliseconds) when you want notes to appear
+const noteTimings = [500, 1200, 2000, 3500, 5000]; // example times
+
+function spawnNote() {
+    const note = document.createElement('div');
+    note.classList.add('note');
+    hitNotes.appendChild(note);
+
+    // Remove the note after the animation finishes (match your CSS animation duration)
+    setTimeout(() => {
+        hitNotes.removeChild(note);
+    }, 2000); // 2000ms = animation duration
+}
+
+// Loop through timings and schedule notes
+noteTimings.forEach(time => {
+    setTimeout(spawnNote, time);
+});
+    </script>
+
 </body>
 </html>
+
 

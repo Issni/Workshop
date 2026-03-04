@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background: black;
+    font-family: 'Space Mono', monospace;
 
 }
 
@@ -13,26 +14,128 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     
 }
 
 .title{
-    background-color: blue;
     display: flex;
+    padding: 30px 600px 30px 30px;
+    margin-top: 80px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    position: relative; /* YESS MAKING IT RELATIVE WORKS update im studpid my hit note absolute had nothing to reference lol */
+    margin: auto;
+    z-index: 1;
+}
+
+.progress-outline{ /* how do i get this to show up UPDATE: it worked once i added in the <p> WHY???*/
+    border: 3px solid white;
+    margin-bottom: 0%; /*margin 0 dont work? i messed up somewehre */
+    margin-top: 10px;
     
-    padding: 10px 10px;
 }
 
 .progress{
-    width: 800px;
-    height: 24px;
+    width: 1000px;
+    height: 50px;
     box-sizing: border-box;
-    outline: 0.6mm solid yellow;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px;
+    margin-bottom: 200px;
 }
 
+.block{
+    flex-grow: 1;
+    width: 100%;
+    height: 44px;
+    margin: 3px;
+    background: transparent;
+    position: relative;
+    box-sizing: border-box;
+    
+}
+
+.block::before{
+    position:absolute;
+    content: "";
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 44px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.3);
+ 
+}
+
+.text{ /* im stupid how to get this and number to be on the same level*/
+    color: white;
+    font-size: 24px;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 80pxs;
+}
+
+.number{
+    color: white;
+    font-size: 60px;
+}
+
+.hit-notes {
+    position: absolute; /* how to get this to only be the size of the iamge */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.note { /* how would i make this generate more while following different timings? */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(255, 255, 255);
+    box-sizing: border-box;
+    animation: shrink 2s linear infinite;
+}
+
+@keyframes shrink {
+    0% {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+}
+
+/*
+.block:last-child::before{
+    display: none;
+}
 .progress::before{
     content: "";
     position: absolute;
@@ -42,7 +145,7 @@ body {
     width: 0;
     height: 20px;
     background: yellow;
-    animation: progress 3s forwards infinite;
+    animation: progress s forwards infinite;
 }
 
 @keyframes progress{
@@ -50,11 +153,4 @@ body {
         width: calc(100% - 4px);
     }
 }
-
-.frame{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-}
-
+*/
