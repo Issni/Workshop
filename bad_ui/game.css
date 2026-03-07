@@ -1,3 +1,15 @@
+p { /* style overrides for the browser*/
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+html, body{
+    overflow: hidden;
+}
 
 body {
     height: 100vh;
@@ -22,18 +34,19 @@ body {
 .title{
     display: flex;
     padding: 30px 600px 30px 30px;
-    margin-top: 80px;
-    font-size: 30px;
+    margin-top: 40px;
+    font-size: 25px;
     background: rgba(255, 255, 255, 0.2);
     color: white;
+    letter-spacing: 2px;
 }
 
 .frame{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 400px;
+    height: 380px;
+    width: 380px;
     position: relative; /* YESS MAKING IT RELATIVE WORKS update im studpid my hit note absolute had nothing to reference lol */
     margin: auto;
     z-index: 1;
@@ -41,9 +54,8 @@ body {
 
 .progress-outline{ /* how do i get this to show up UPDATE: it worked once i added in the <p> WHY???*/
     border: 3px solid white;
-    margin-bottom: 0%; /*margin 0 dont work? i messed up somewehre */
-    margin-top: 10px;
-    
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .progress{
@@ -55,7 +67,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1px;
-    margin-bottom: 200px;
+
 }
 
 .block{
@@ -84,10 +96,8 @@ body {
 
 .text{ /* im stupid how to get this and number to be on the same level*/
     color: white;
-    font-size: 24px;
-    text-align: right;
-    margin-right: 20px;
-    margin-bottom: 80pxs;
+    font-size: 20px;
+   
 }
 
 .number{
@@ -96,7 +106,7 @@ body {
 }
 
 .hit-notes {
-    position: absolute; /* how to get this to only be the size of the iamge */
+    position: absolute; /* how to get this to only be the size of the iamge got it to work */ 
     top: 0;
     left: 0;
     width: 100%;
@@ -112,7 +122,7 @@ body {
     height: 100%;
     border: 2px solid rgb(255, 255, 255);
     box-sizing: border-box;
-    animation: shrink 2s linear infinite;
+    animation: shrink 2s linear forwards;
 }
 
 @keyframes shrink {
@@ -131,6 +141,16 @@ body {
         opacity: 1;
     }
 }
+
+.text-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+}
+
+
 
 /*
 .block:last-child::before{
@@ -154,3 +174,63 @@ body {
     }
 }
 */
+
+/* starting state */
+#page-container {
+    opacity: 0;
+    filter: blur(6px);
+}
+
+/* glitch animation */
+#page-container.show {
+    animation: glitchFade 0.9s forwards;
+}
+
+@keyframes glitchFade {
+
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+        filter: blur(6px);
+    }
+
+    10% {
+        opacity: 0.3;
+        transform: translateX(-8px);
+    }
+
+    20% {
+        transform: translateX(8px);
+    }
+
+    30% {
+        transform: translateX(-5px);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    55% {
+        transform: translateX(-2px);
+        filter: blur(2px);
+    }
+
+    70% {
+        transform: translateX(2px);
+    }
+
+    85% {
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+
