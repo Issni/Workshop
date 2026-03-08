@@ -18,7 +18,6 @@ body {
     padding: 0;
     background: black;
     font-family: 'Space Mono', monospace;
-
 }
 
 .center{
@@ -28,7 +27,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
 }
 
 .title{
@@ -67,7 +65,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1px;
-
 }
 
 .block{
@@ -78,7 +75,6 @@ body {
     background: transparent;
     position: relative;
     box-sizing: border-box;
-    
 }
 
 .block::before{
@@ -91,7 +87,6 @@ body {
     height: 44px;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.3);
- 
 }
 
 .text{ /* im stupid how to get this and number to be on the same level*/
@@ -204,8 +199,8 @@ body {
     }
 
     30% {
-        transform: translateX(-5px);
         opacity: 0.5;
+        transform: translateX(-5px);
     }
 
     40% {

@@ -16,7 +16,6 @@ h1 {
     font-weight: 700;
     color: #2f78cb;
     font-family: noto sans, sans-serif;
-
 }
 
 h2{
@@ -35,7 +34,6 @@ h2{
 
 p {
     line-height: 1.6;
-    
 }
 
 .checkbox-area {
@@ -63,7 +61,6 @@ button:hover {
     font-weight: 500;
     margin-top: 20px;
     text-align: justify;
-  
 }
 
 .bounce-animation{
@@ -76,7 +73,6 @@ button:hover {
 
 #cat-image{
     transition: opacity .6s ease-out;
-
 }
 
 .intro{

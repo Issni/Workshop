@@ -76,8 +76,9 @@ body, html {
     }
 
     30% {
-        transform: translateX(-5px);
         opacity: 0.5;
+        transform: translateX(-5px);
+        filter: blur(4);
     }
 
     40% {
@@ -86,7 +87,7 @@ body, html {
 
     55% {
         transform: translateX(-2px);
-        filter: blur(2px);
+        
     }
 
     70% {
@@ -95,7 +96,7 @@ body, html {
 
     85% {
         transform: translateX(0);
-        filter: blur(0);
+        filter: blur(2);
     }
 
     100% {
