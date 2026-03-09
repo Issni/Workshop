@@ -4,18 +4,16 @@
         // 1. Select the element you want to add the listener to
         const page = document.querySelector("#page-container");
         // 3. Attach the event listener to the element
-        page.addEventListener("click", updateProgress); 
+        page.addEventListener("click", updateProgress); //each click runs update progress
         console.log(blocks.length)
         function updateProgress() {
-            if (i == blocks.length) {
-                window.location.href = "accepted.html";
+            if (i == blocks.length) { window.location.href = "accepted.html";
                 //i =  0;
                 //blocks.forEach( (block) => {
                     //block.style.background = "transparent";
                 //});
             } else {
                 blocks[i].style.background = "rgb(255,255,255)";
-            //this chunk here i googled online to find i understand the math kinda? but still dono quite whats going on ISSUE - wont go to 100 cuz of the math
                 let percent = Math.floor((i + 1) * 4);
                 number.textContent = percent + "%";
                 i = i + 1;

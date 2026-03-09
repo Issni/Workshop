@@ -63,18 +63,6 @@ button:hover {
     text-align: justify;
 }
 
-.bounce-animation{
-    background-color: black;
-}
-
-.opacity-0{
-    opacity: 0;
-}
-
-#cat-image{
-    transition: opacity .6s ease-out;
-}
-
 .intro{
     color: #2f78cb;
     font-size: 30px;
