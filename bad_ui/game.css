@@ -4,7 +4,7 @@ p { /* style overrides for the browser*/
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    unicode-bidi: isolate;
+    unicode-bidi: isolate; /*stuff inside p wont affect outside */
 }
 
 html, body{
@@ -12,7 +12,7 @@ html, body{
 }
 
 body {
-    height: 100vh;
+    height: 100vh; /* viewport height */
     width: 100%;
     margin: 0;
     padding: 0;
@@ -41,11 +41,11 @@ body {
 
 .frame{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /*for horizontal c? */
+    align-items: center; /* for vertical c? */
     height: 380px;
     width: 380px;
-    position: relative; /* YESS MAKING IT RELATIVE WORKS update im studpid my hit note absolute had nothing to reference lol */
+    position: relative; /* relative ties it with .frame if not relative gonna be relative to the whole page*/
     margin: auto;
     z-index: 1;
 }
@@ -101,7 +101,7 @@ body {
 }
 
 .hit-notes {
-    position: absolute; /* how to get this to only be the size of the iamge got it to work */ 
+    position: absolute; /* fits it in .frame */ 
     top: 0;
     left: 0;
     width: 100%;
@@ -109,7 +109,7 @@ body {
     z-index: 2;
 }
 
-.note { /* how would i make this generate more while following different timings? */
+.note {
     position: absolute;
     top: 0;
     left: 0;
@@ -141,7 +141,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 1rem; /* compressed way add padding */
 
 }
 
@@ -185,7 +185,7 @@ body {
 
     0% {
         opacity: 0;
-        transform: translateX(0);
+        transform: translateX(0); /* x horizontal */
         filter: blur(6px);
     }
 
