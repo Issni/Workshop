@@ -10,12 +10,10 @@ body, html {
     flex-direction: column;
 }
 
-/* Container */
 .group {
     text-align: center;
 }
 
-/* Checkmark */
 .checkmark {
     font-size: 120px;
     color: #1cab1c;
@@ -33,27 +31,24 @@ body, html {
     }
 }
 
-/* Message */
-.message {
+.main {
     font-size: 32px;
     font-weight: bold;
     font-family: noto sans, sans-serif;
 }
 
-/* Optional subtitle */
-.subtitle {
+.sub {
     margin-top: 10px;
     font-size: 20px;
     color: #a7a7a7;
     font-family: space mono, monospace;
 }
 
-/* starting state */
 .group{
     opacity: 0;
     filter: blur(6px);
 }
-/* glitch animation */
+
 .group.show {
     animation: glitchFade 0.9s forwards;
 }
