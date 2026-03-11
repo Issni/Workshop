@@ -81,7 +81,7 @@ body, html {
         transform: translateX(5px);
     }
 
-    55% {
+    50% {
         transform: translateX(-2px);
         
     }
@@ -90,7 +90,7 @@ body, html {
         transform: translateX(2px);
     }
 
-    85% {
+    80% {
         transform: translateX(0);
         filter: blur(2);
     }

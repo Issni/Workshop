@@ -41,8 +41,8 @@ body {
 
 .frame{
     display: flex;
-    justify-content: center; /*for horizontal c? */
-    align-items: center; /* for vertical c? */
+    justify-content: center; /*for horizontal c */
+    align-items: center; /* for vertical c */
     height: 380px;
     width: 380px;
     position: relative; /* relative ties it with .frame if not relative gonna be relative to the whole page*/
@@ -50,7 +50,7 @@ body {
     z-index: 1;
 }
 
-.progress-outline{ /* how do i get this to show up UPDATE: it worked once i added in the <p> WHY???*/
+.progress-outline{ 
     border: 3px solid white;
     padding: 30px;
     box-sizing: border-box;
@@ -89,7 +89,7 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
-.text{ /* im stupid how to get this and number to be on the same level*/
+.text{ 
     color: white;
     font-size: 20px;
    
@@ -120,6 +120,7 @@ body {
     animation: shrink 2s linear forwards;
 }
 
+/* shrink animation for my notes that will be generated with the spawnnote */
 @keyframes shrink {
     0% {
         top: 0;
@@ -147,36 +148,13 @@ body {
 
 
 
-/*
-.block:last-child::before{
-    display: none;
-}
-.progress::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 2px;
-    transform: translate(0, -50%);
-    width: 0;
-    height: 20px;
-    background: yellow;
-    animation: progress s forwards infinite;
-}
-
-@keyframes progress{
-    to{
-        width: calc(100% - 4px);
-    }
-}
-*/
-
-/* starting state */
+/* This animation was found on Youtube, I tweaked the blur amounts, opacity and percentage */
 #page-container {
     opacity: 0;
     filter: blur(6px);
 }
 
-/* glitch animation */
+
 #page-container.show {
     animation: glitchFade 0.9s forwards;
 }
@@ -207,7 +185,7 @@ body {
         transform: translateX(5px);
     }
 
-    55% {
+    50% {
         transform: translateX(-2px);
         filter: blur(2px);
     }
@@ -216,7 +194,7 @@ body {
         transform: translateX(2px);
     }
 
-    85% {
+    80% {
         transform: translateX(0);
         filter: blur(0);
     }
